@@ -1,0 +1,12 @@
+# Safety
+
+Temple of Time inherits The Hero's Journey's checks: the WCAG 2.3.1 flash and red-flash analyser, the regular-pattern analyser after the ITC (Ofcom) guidance, whole-field motion caps from optical flow, red-capped colour, the start gate and held frames. Their rules, sources and limits are in [The Hero's Journey's docs/safety.md](../../herosjourney/docs/safety.md). Every effect and preset here runs through them in `npm test`, at the default and at the strong dose (0.7).
+
+This family's cases:
+
+- **Sunbursts, fans and laser fans are radial patterns.** More than five rays at a luminance step of 0.1 or more, filling a 10° field, fail the pattern rule, as The Hero's Journey's rosettes did. They hold their step down by default; full contrast is a gated preset, or a small badge.
+- **Op art is the pattern hazard by design.** It is only ever full contrast behind the gate.
+- **Halftone and Ben-Day dots are lattices,** which the ITC note counts ("rows of repetitive elements such as polka dots"). The Hero's Journey's analyser missed small dots: a lattice spreads its energy over its two lattice vectors and their sum and difference, so the two strongest peaks alone held a third of it or less. M1 adds that reading (`lattice` in `src/gpu/safety/pattern.ts`). Of 60 test lattices (pitches 5 to 24 frame pixels, dots 15% to 45% of the pitch, three angles), 10 passed before and 3 after; the 3 are dots a pixel and a half across, below what the frame resolves. Known positives in `tests/pattern.test.ts` include a 45° halftone, a Ben-Day screen, a hexagonal lattice and small polka dots.
+- **The analysis frame's resolution is a limit.** The checks render at 480 × 270 for a 1920 × 1080 view, so a frame pixel is 4 CSS pixels and a screen finer than about 9 CSS pixels (about 4 cycles a degree at the guidance's viewing distance) is not resolved. Wilkins puts the peak of pattern discomfort at about 3 cycles a degree, inside what the frame sees, but finer screens are not checked. Print effects therefore also bound their dot step on the CPU, whatever the screen (`pop-dots`).
+- **Chrome glints and neon strikes are flicker,** built on the band-limited flicker signal so they cannot pass three flashes a second.
+- **Disco spots and supergraphic sweeps are whole-field motion,** held to the caps from the effects' own transforms where the spots are too sparse for optical flow (Snow Temple 2.4).

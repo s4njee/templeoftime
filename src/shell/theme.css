@@ -1,0 +1,253 @@
+/*
+ * Design tokens and the few primitives every shell component shares.
+ * The effects carry the page: chrome stays quiet, flat, and low-contrast against them.
+ * Components use these tokens only; no new colours, radii, or font sizes elsewhere.
+ *
+ * Light and dark equally: print looks are light-page natives (ink on paper), chrome and neon
+ * dark-page ones. Neutrals are warm paper greys.
+ * The accent is the only avocado; tier colours stay away from it.
+ */
+
+:root {
+  color-scheme: dark;
+
+  --tt-font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --tt-font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  --tt-text-xs: 0.75rem;
+  --tt-text-s: 0.8125rem;
+  --tt-text-m: 0.9375rem;
+  --tt-text-l: 1.25rem;
+  --tt-text-xl: 1.75rem;
+
+  --tt-space-1: 4px;
+  --tt-space-2: 8px;
+  --tt-space-3: 12px;
+  --tt-space-4: 16px;
+  --tt-space-5: 24px;
+  --tt-space-6: 40px;
+
+  --tt-radius-s: 4px;
+  --tt-radius-m: 8px;
+  --tt-radius-l: 14px;
+
+  --tt-bg: light-dark(#f6f3ec, #0e0d0b);
+  --tt-surface: light-dark(#fdfbf6, #171512);
+  --tt-surface-2: light-dark(#ebe6da, #221f1a);
+  --tt-border: light-dark(#d8d1c2, #34302a);
+  --tt-text: light-dark(#1a1814, #efebe2);
+  --tt-text-muted: light-dark(#615a4e, #a59d8f);
+  --tt-accent: light-dark(#5b6b14, #b8c95c);
+  --tt-on-accent: light-dark(#fdfbf6, #161a05);
+  --tt-focus: light-dark(#5b6b14, #dbe8a0);
+
+  /* Practicality tiers: A drop-in, B feature, C showpiece. Hues clear of the avocado accent:
+     Tier A is teal, not green, which would sit beside it. */
+  --tt-tier-a: light-dark(#0b6f78, #5fcfd8);
+  --tt-tier-b: light-dark(#6a4bc4, #b8a4ff);
+  --tt-tier-c: light-dark(#8a5300, #f2c46f);
+
+  --tt-header-height: 52px;
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+}
+
+:root[data-theme='auto'] {
+  color-scheme: light dark;
+}
+
+/*
+ * A subtree can be shown as the other kind of page (the effect stage does this, story 2.7): the
+ * tokens are light-dark() values, so they follow whatever colour scheme the element has.
+ */
+[data-page='light'] {
+  color-scheme: light;
+}
+
+[data-page='dark'] {
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--tt-bg);
+  color: var(--tt-text);
+  font: var(--tt-text-m) / 1.5 var(--tt-font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--tt-accent);
+  text-underline-offset: 0.15em;
+}
+
+:focus-visible {
+  outline: 2px solid var(--tt-focus);
+  outline-offset: 2px;
+}
+
+/* Numbers and code: tabular so readouts do not jitter as they update. */
+.tt-data {
+  font-family: var(--tt-font-mono);
+  font-size: var(--tt-text-s);
+  font-variant-numeric: tabular-nums;
+}
+
+.tt-muted {
+  color: var(--tt-text-muted);
+}
+
+.tt-label {
+  color: var(--tt-text-muted);
+  font-size: var(--tt-text-xs);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.tt-button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--tt-space-2);
+  min-height: 32px;
+  padding: 0 var(--tt-space-3);
+  border: 1px solid var(--tt-border);
+  border-radius: var(--tt-radius-m);
+  background: var(--tt-surface);
+  color: var(--tt-text);
+  font: inherit;
+  font-size: var(--tt-text-s);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.tt-button:hover {
+  background: var(--tt-surface-2);
+}
+
+.tt-button[aria-pressed='true'],
+.tt-button--primary {
+  border-color: var(--tt-accent);
+  background: var(--tt-accent);
+  color: var(--tt-on-accent);
+}
+
+.tt-button--quiet {
+  border-color: transparent;
+  background: transparent;
+}
+
+.tt-chip {
+  display: inline-flex;
+  align-items: center;
+  height: 22px;
+  padding: 0 var(--tt-space-2);
+  border: 1px solid var(--tt-border);
+  border-radius: 999px;
+  color: var(--tt-text-muted);
+  font-size: var(--tt-text-xs);
+  white-space: nowrap;
+}
+
+/* Tier chips: add data-tier="A" | "B" | "C". */
+.tt-chip[data-tier] {
+  border-color: currentColor;
+  font-weight: 600;
+}
+
+.tt-chip[data-tier='A'] {
+  color: var(--tt-tier-a);
+}
+
+.tt-chip[data-tier='B'] {
+  color: var(--tt-tier-b);
+}
+
+.tt-chip[data-tier='C'] {
+  color: var(--tt-tier-c);
+}
+
+.tt-panel {
+  border: 1px solid var(--tt-border);
+  border-radius: var(--tt-radius-l);
+  background: var(--tt-surface);
+}
+
+.tt-tabs {
+  display: flex;
+  gap: var(--tt-space-4);
+  border-bottom: 1px solid var(--tt-border);
+}
+
+.tt-tab {
+  margin-bottom: -1px;
+  padding: var(--tt-space-2) 0;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: none;
+  color: var(--tt-text-muted);
+  font: inherit;
+  font-size: var(--tt-text-s);
+  cursor: pointer;
+}
+
+.tt-tab[aria-selected='true'] {
+  border-bottom-color: var(--tt-accent);
+  color: var(--tt-text);
+}
+
+/* Long-form text: write-ups and notes. */
+.tt-prose {
+  max-width: 68ch;
+  line-height: 1.65;
+}
+
+.tt-prose > * + * {
+  margin-top: var(--tt-space-4);
+}
+
+.tt-prose h2 {
+  margin-top: var(--tt-space-5);
+  font-size: var(--tt-text-l);
+}
+
+.tt-prose h3 {
+  font-size: var(--tt-text-m);
+}
+
+.tt-prose code {
+  padding: 0.1em 0.3em;
+  border-radius: var(--tt-radius-s);
+  background: var(--tt-surface-2);
+  font-family: var(--tt-font-mono);
+  font-size: 0.9em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,304 @@
+{
+  "epic": "6",
+  "measuredAt": "2026-10-28T13:38:11.499Z",
+  "device": "Metal driver on macOS Version 26.6.2 (Build 25G83)",
+  "deviceClass": "unclassified",
+  "adapter": {
+    "vendor": "apple",
+    "architecture": "metal-3",
+    "device": "apple-m1-max",
+    "description": "Metal driver on macOS Version 26.6.2 (Build 25G83)"
+  },
+  "runtime": "Dawn (node webgpu bindings)",
+  "method": {
+    "metric": "GPU timestamps: frame span (first pass start to last pass end) and marginal cost per extra frame",
+    "warmupFrames": 12,
+    "rounds": 11,
+    "repeats": 4
+  },
+  "note": "Only this adapter was measured. spanMs includes the timing floor (see the \"(floor)\" rows); slopeMs is the cost of one more frame of the same work and is the number to compare by. A slope at or below zero means the work is below what this method can resolve.",
+  "rows": [
+    {
+      "effect": "(floor)",
+      "config": "one constant-colour pass",
+      "width": 1920,
+      "height": 1080,
+      "spanMs": 0.065536,
+      "slopeMs": 0.065536,
+      "slopeMinMs": 0.021845333333333338,
+      "slopeMaxMs": 0.17476266666666665,
+      "passes": 1,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "(tail)",
+      "config": "constant scene + bloom + output",
+      "width": 1920,
+      "height": 1080,
+      "spanMs": 0.720896,
+      "slopeMs": 0.589824,
+      "slopeMinMs": 0.3058346666666667,
+      "slopeMaxMs": 0.9175040000000001,
+      "passes": 11,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "chrome-type",
+      "config": "default",
+      "width": 1920,
+      "height": 1080,
+      "spanMs": 0.786432,
+      "slopeMs": 0.8738133333333334,
+      "slopeMinMs": 0.6772053333333333,
+      "slopeMaxMs": 1.3544106666666667,
+      "passes": 12,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "chrome-type",
+      "config": "preset sunset",
+      "width": 1920,
+      "height": 1080,
+      "spanMs": 0.851968,
+      "slopeMs": 0.6116693333333334,
+      "slopeMinMs": 0.24029866666666666,
+      "slopeMaxMs": 1.3325653333333334,
+      "passes": 12,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "chrome-type",
+      "config": "preset on its sunset",
+      "width": 1920,
+      "height": 1080,
+      "spanMs": 0.589824,
+      "slopeMs": 0.5679786666666667,
+      "slopeMinMs": 0.32768,
+      "slopeMaxMs": 0.8738133333333332,
+      "passes": 12,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "chrome-type",
+      "config": "preset steel",
+      "width": 1920,
+      "height": 1080,
+      "spanMs": 0.589824,
+      "slopeMs": 0.5024426666666667,
+      "slopeMinMs": 0.3058346666666667,
+      "slopeMaxMs": 0.7645866666666666,
+      "passes": 12,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "chrome-type",
+      "config": "preset gold",
+      "width": 1920,
+      "height": 1080,
+      "spanMs": 0.720896,
+      "slopeMs": 0.6990506666666666,
+      "slopeMinMs": 0.15291733333333335,
+      "slopeMaxMs": 1.2014933333333333,
+      "passes": 12,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "chrome-type",
+      "config": "preset still, no glints",
+      "width": 1920,
+      "height": 1080,
+      "spanMs": 0.720896,
+      "slopeMs": 0.8082773333333334,
+      "slopeMinMs": 0.021845333333333345,
+      "slopeMaxMs": 1.3107199999999999,
+      "passes": 11,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "chrome-type",
+      "config": "size=0.12",
+      "width": 1920,
+      "height": 1080,
+      "params": {
+        "size": 0.12
+      },
+      "spanMs": 0.720896,
+      "slopeMs": 0.6335146666666667,
+      "slopeMinMs": 0.131072,
+      "slopeMaxMs": 1.048576,
+      "passes": 12,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "chrome-type",
+      "config": "size=0.25",
+      "width": 1920,
+      "height": 1080,
+      "params": {
+        "size": 0.25
+      },
+      "spanMs": 0.720896,
+      "slopeMs": 0.6772053333333333,
+      "slopeMinMs": 0.15291733333333335,
+      "slopeMaxMs": 1.2014933333333333,
+      "passes": 12,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "chrome-type",
+      "config": "size=0.4",
+      "width": 1920,
+      "height": 1080,
+      "params": {
+        "size": 0.4
+      },
+      "spanMs": 0.720896,
+      "slopeMs": 1.376256,
+      "slopeMinMs": 0.98304,
+      "slopeMaxMs": 2.118997333333333,
+      "passes": 12,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "(floor)",
+      "config": "one constant-colour pass",
+      "width": 960,
+      "height": 540,
+      "spanMs": 0,
+      "slopeMs": 0.043690666666666676,
+      "slopeMinMs": 0.02184533333333333,
+      "slopeMaxMs": 0.08738133333333332,
+      "passes": 1,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "(tail)",
+      "config": "constant scene + bloom + output",
+      "width": 960,
+      "height": 540,
+      "spanMs": 0.458752,
+      "slopeMs": 0.393216,
+      "slopeMinMs": 0.30583466666666664,
+      "slopeMaxMs": 0.8301226666666667,
+      "passes": 9,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "chrome-type",
+      "config": "default",
+      "width": 960,
+      "height": 540,
+      "spanMs": 0.524288,
+      "slopeMs": 0.39321599999999995,
+      "slopeMinMs": -0.5024426666666667,
+      "slopeMaxMs": 1.376256,
+      "passes": 10,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "chrome-type",
+      "config": "preset sunset",
+      "width": 960,
+      "height": 540,
+      "spanMs": 0.589824,
+      "slopeMs": 0.4150613333333333,
+      "slopeMinMs": -0.262144,
+      "slopeMaxMs": 1.2888746666666668,
+      "passes": 10,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "chrome-type",
+      "config": "preset on its sunset",
+      "width": 960,
+      "height": 540,
+      "spanMs": 0.524288,
+      "slopeMs": 0.4369066666666667,
+      "slopeMinMs": -0.15291733333333335,
+      "slopeMaxMs": 1.2888746666666668,
+      "passes": 10,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "chrome-type",
+      "config": "preset steel",
+      "width": 960,
+      "height": 540,
+      "spanMs": 0.524288,
+      "slopeMs": 0.917504,
+      "slopeMinMs": -0.13107200000000008,
+      "slopeMaxMs": 1.2670293333333333,
+      "passes": 10,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "chrome-type",
+      "config": "preset gold",
+      "width": 960,
+      "height": 540,
+      "spanMs": 0.524288,
+      "slopeMs": 0.4369066666666666,
+      "slopeMinMs": -0.32768,
+      "slopeMaxMs": 1.2233386666666666,
+      "passes": 10,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "chrome-type",
+      "config": "preset still, no glints",
+      "width": 960,
+      "height": 540,
+      "spanMs": 0.458752,
+      "slopeMs": 0.4369066666666667,
+      "slopeMinMs": -0.3495253333333334,
+      "slopeMaxMs": 1.179648,
+      "passes": 9,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "chrome-type",
+      "config": "size=0.12",
+      "width": 960,
+      "height": 540,
+      "params": {
+        "size": 0.12
+      },
+      "spanMs": 0.524288,
+      "slopeMs": 0.393216,
+      "slopeMinMs": -0.13107200000000008,
+      "slopeMaxMs": 0.851968,
+      "passes": 10,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "chrome-type",
+      "config": "size=0.25",
+      "width": 960,
+      "height": 540,
+      "params": {
+        "size": 0.25
+      },
+      "spanMs": 0.524288,
+      "slopeMs": 0.41506133333333334,
+      "slopeMinMs": -0.32768,
+      "slopeMaxMs": 1.3981013333333332,
+      "passes": 10,
+      "metric": "gpu-timestamp"
+    },
+    {
+      "effect": "chrome-type",
+      "config": "size=0.4",
+      "width": 960,
+      "height": 540,
+      "params": {
+        "size": 0.4
+      },
+      "spanMs": 0.524288,
+      "slopeMs": 0.851968,
+      "slopeMinMs": -0.021845333333333272,
+      "slopeMaxMs": 1.2233386666666666,
+      "passes": 10,
+      "metric": "gpu-timestamp"
+    }
+  ]
+}

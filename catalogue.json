@@ -1,0 +1,279 @@
+{
+  "project": "templeoftime",
+  "effects": [
+    {
+      "id": "hello",
+      "title": "Hello",
+      "summary": "The smallest effect: a Deco fan of rays from the bottom of the view, turning very slowly, in one fragment pass through the HDR tail. Every later effect starts from this shape.",
+      "epic": "1",
+      "tier": "A",
+      "tags": [
+        "scaffold",
+        "Art Deco"
+      ],
+      "status": "demo",
+      "poster": "src/effects/hello/poster.webp",
+      "scorecard": {
+        "compute": false,
+        "mobile": "untested",
+        "flash": "none",
+        "pattern": "none",
+        "lightPage": "no",
+        "features": {
+          "required": []
+        },
+        "fallback": "A still of the fan, or a repeating-conic-gradient.",
+        "useCases": [
+          "The template for new effects"
+        ]
+      }
+    },
+    {
+      "id": "airbrush",
+      "title": "Airbrush",
+      "summary": "An airbrushed sunset, built the way an illustrator built one: sky, glow, a banded sun and mountains, each sprayed as overlapping passes through a frisket cut for it, with overspray past the passes and droplet specks where the paint is thin. It can spray itself in, pass by pass.",
+      "epic": "2",
+      "tier": "A",
+      "tags": [
+        "airbrush",
+        "1980s",
+        "illustration"
+      ],
+      "status": "demo",
+      "poster": "src/effects/airbrush/poster.webp",
+      "scorecard": {
+        "compute": false,
+        "mobile": "untested",
+        "flash": "none",
+        "pattern": "none",
+        "lightPage": "no",
+        "features": {
+          "required": []
+        },
+        "fallback": "A still of the finished picture.",
+        "useCases": [
+          "A retro hero backdrop",
+          "The base of chrome lettering and 80s sunsets (6.1, 6.2)"
+        ]
+      }
+    },
+    {
+      "id": "faded-print",
+      "title": "Faded print",
+      "summary": "A holiday snapshot aged as a 1970s colour print ages: its three dyes fading at their own rates, cyan first in an album, so the print drifts red, or magenta first on a sunlit wall, so it drifts green and blue, with yellowed whites and lifted blacks. Beside it, what CSS's sepia() and hue-rotate() do instead.",
+      "epic": "2",
+      "tier": "A",
+      "tags": [
+        "photograph",
+        "dye fading",
+        "1970s"
+      ],
+      "status": "ready",
+      "poster": "src/effects/faded-print/poster.webp",
+      "scorecard": {
+        "compute": false,
+        "mobile": "untested",
+        "flash": "none",
+        "pattern": "none",
+        "lightPage": "yes",
+        "features": {
+          "required": []
+        },
+        "fallback": "A still of the print, or the CSS filter version.",
+        "useCases": [
+          "A period treatment for a page photograph",
+          "A family-history or archive page"
+        ]
+      }
+    },
+    {
+      "id": "offset-print",
+      "title": "Offset print",
+      "summary": "Four-colour process printing, as a press does it: a picture separated into cyan, magenta, yellow and black, each screened into halftone dots at its traditional angle so the inks form rosettes, spread by dot gain on the paper, slipped out of register and laid on newsprint, uncoated or coated stock.",
+      "epic": "2",
+      "tier": "A",
+      "tags": [
+        "print",
+        "halftone",
+        "1960s"
+      ],
+      "status": "ready",
+      "poster": "src/effects/offset-print/poster.webp",
+      "scorecard": {
+        "compute": false,
+        "mobile": "untested",
+        "flash": "none",
+        "pattern": "none",
+        "patternPresets": [
+          "swatches",
+          "moiré: one angle",
+          "real dots"
+        ],
+        "lightPage": "yes",
+        "features": {
+          "required": []
+        },
+        "fallback": "A still of the print: it does not move.",
+        "useCases": [
+          "A print treatment for a hero image",
+          "An editorial or poster page"
+        ]
+      }
+    },
+    {
+      "id": "photocopy",
+      "title": "Photocopy",
+      "summary": "The 1990s photocopier: each generation a copy of the last, blurred by the optics, thresholded into toner, a little skewed and scaled, with toner specks, dropouts and streaks from a dirty drum, so a copy of a copy of a copy falls apart the way zines and flyers did.",
+      "epic": "2",
+      "tier": "A",
+      "tags": [
+        "print",
+        "xerography",
+        "1990s",
+        "grunge"
+      ],
+      "status": "ready",
+      "poster": "src/effects/photocopy/poster.webp",
+      "scorecard": {
+        "compute": false,
+        "mobile": "untested",
+        "flash": "none",
+        "pattern": "none",
+        "lightPage": "yes",
+        "features": {
+          "required": []
+        },
+        "fallback": "A still of the copy: it does not move.",
+        "useCases": [
+          "A zine, flyer or grunge page treatment",
+          "The base of grunge type (7.4)"
+        ]
+      }
+    },
+    {
+      "id": "pop-dots",
+      "title": "Pop dots",
+      "summary": "Ben-Day dots, the comic book's colour process that pop art enlarged: a picture posterised to a few flat tints of cyan, magenta and yellow, each tint a coarse screen of even dots or a solid, with spotted blacks and heavy black contours, on newsprint.",
+      "epic": "2",
+      "tier": "A",
+      "tags": [
+        "print",
+        "Ben-Day",
+        "1960s",
+        "pop art"
+      ],
+      "status": "ready",
+      "poster": "src/effects/pop-dots/poster.webp",
+      "scorecard": {
+        "compute": false,
+        "mobile": "untested",
+        "flash": "none",
+        "pattern": "none",
+        "patternPresets": [
+          "full ink"
+        ],
+        "lightPage": "yes",
+        "features": {
+          "required": []
+        },
+        "fallback": "A still of the print: it does not move.",
+        "useCases": [
+          "A pop-art treatment for a hero image",
+          "A comic-styled section or poster"
+        ]
+      }
+    },
+    {
+      "id": "screen-print",
+      "title": "Screen print",
+      "summary": "A silkscreen print: the picture posterised to a few flat inks, each laid as its own pass through a stencil, so each lands a little out of register, with the texture and uneven coverage a squeegee leaves. Light inks first, dark last, on cream stock.",
+      "epic": "2",
+      "tier": "A",
+      "tags": [
+        "print",
+        "silkscreen",
+        "1960s",
+        "pop art"
+      ],
+      "status": "ready",
+      "poster": "src/effects/screen-print/poster.webp",
+      "scorecard": {
+        "compute": false,
+        "mobile": "untested",
+        "flash": "none",
+        "pattern": "none",
+        "lightPage": "yes",
+        "features": {
+          "required": []
+        },
+        "fallback": "A still of the print: it does not move.",
+        "useCases": [
+          "A poster treatment for a hero image",
+          "A gig, event or exhibition page"
+        ]
+      }
+    },
+    {
+      "id": "sunburst",
+      "title": "Sunburst",
+      "summary": "The Art Deco sunburst: tapered rays from a rising sun, a centre or a corner fan, stepped into tiers, in gold on black, jade and gold, or the pink of its 1980s Miami revival. Its contrast is held under the regular-pattern rule by default; full Deco contrast waits behind the gate.",
+      "epic": "3",
+      "tier": "A",
+      "tags": [
+        "Art Deco",
+        "pattern",
+        "gold"
+      ],
+      "status": "demo",
+      "poster": "src/effects/sunburst/poster.webp",
+      "scorecard": {
+        "compute": false,
+        "mobile": "untested",
+        "flash": "none",
+        "pattern": "none",
+        "patternPresets": [
+          "full contrast"
+        ],
+        "lightPage": "no",
+        "features": {
+          "required": []
+        },
+        "fallback": "A still, or CSS: a repeating-conic-gradient does the rays, without the tiers or taper.",
+        "useCases": [
+          "A hero or section background on a Deco-styled page",
+          "A badge or seal, small"
+        ]
+      }
+    },
+    {
+      "id": "chrome-type",
+      "title": "Chrome type",
+      "summary": "Airbrushed chrome lettering, as on 1980s album covers and arcade marquees: the heading bevelled into a rounded profile and reflecting a painted horizon, sky above and dark ground below, the line bending round each letter. A dark outline, a drop shadow, star glints and a gleam that sweeps across.",
+      "epic": "6",
+      "tier": "A",
+      "tags": [
+        "1980s",
+        "type",
+        "chrome",
+        "airbrush"
+      ],
+      "status": "ready",
+      "poster": "src/effects/chrome-type/poster.webp",
+      "scorecard": {
+        "compute": false,
+        "mobile": "untested",
+        "flash": "low",
+        "pattern": "none",
+        "lightPage": "untested",
+        "features": {
+          "required": []
+        },
+        "fallback": "A still of the heading, or the CSS version: a gradient clipped to the text.",
+        "useCases": [
+          "A logo or heading on a retro page",
+          "A game or music landing page"
+        ]
+      }
+    }
+  ]
+}

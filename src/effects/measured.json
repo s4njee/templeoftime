@@ -1,0 +1,101 @@
+{
+  "airbrush": {
+    "gpuMs": [
+      {
+        "device": "Metal driver on macOS Version 26.6.2 (Build 25G83)",
+        "deviceClass": "unclassified",
+        "method": "marginal",
+        "ms": 0.09
+      }
+    ],
+    "bundleKb": 33.3
+  },
+  "chrome-type": {
+    "gpuMs": [
+      {
+        "device": "Metal driver on macOS Version 26.6.2 (Build 25G83)",
+        "deviceClass": "unclassified",
+        "method": "marginal",
+        "ms": 0.87
+      }
+    ],
+    "bundleKb": 45.2
+  },
+  "faded-print": {
+    "gpuMs": [
+      {
+        "device": "Metal driver on macOS Version 26.6.2 (Build 25G83)",
+        "deviceClass": "unclassified",
+        "method": "marginal",
+        "ms": 0.22
+      }
+    ],
+    "bundleKb": 34
+  },
+  "hello": {
+    "bundleKb": 24.5,
+    "gpuMs": [
+      {
+        "device": "Metal driver on macOS Version 26.6.2 (Build 25G83)",
+        "deviceClass": "unclassified",
+        "method": "marginal",
+        "ms": 0.26
+      }
+    ]
+  },
+  "offset-print": {
+    "bundleKb": 36.3,
+    "gpuMs": [
+      {
+        "device": "Metal driver on macOS Version 26.6.2 (Build 25G83)",
+        "deviceClass": "unclassified",
+        "method": "marginal",
+        "ms": 0.76
+      }
+    ]
+  },
+  "photocopy": {
+    "gpuMs": [
+      {
+        "device": "Metal driver on macOS Version 26.6.2 (Build 25G83)",
+        "deviceClass": "unclassified",
+        "method": "marginal",
+        "ms": 0.13
+      }
+    ],
+    "bundleKb": 33.6
+  },
+  "pop-dots": {
+    "gpuMs": [
+      {
+        "device": "Metal driver on macOS Version 26.6.2 (Build 25G83)",
+        "deviceClass": "unclassified",
+        "method": "marginal",
+        "ms": 0.24
+      }
+    ],
+    "bundleKb": 37.1
+  },
+  "screen-print": {
+    "gpuMs": [
+      {
+        "device": "Metal driver on macOS Version 26.6.2 (Build 25G83)",
+        "deviceClass": "unclassified",
+        "method": "marginal",
+        "ms": 0.24
+      }
+    ],
+    "bundleKb": 35.9
+  },
+  "sunburst": {
+    "bundleKb": 25.4,
+    "gpuMs": [
+      {
+        "device": "Metal driver on macOS Version 26.6.2 (Build 25G83)",
+        "deviceClass": "unclassified",
+        "method": "marginal",
+        "ms": 0.17
+      }
+    ]
+  }
+}

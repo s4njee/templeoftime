@@ -1,0 +1,132 @@
+.tt-controls {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tt-space-3);
+  min-width: 0;
+}
+
+.tt-controls__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--tt-space-2);
+}
+
+.tt-controls__actions,
+.tt-controls__group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tt-space-2);
+}
+
+.tt-controls__presets {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tt-space-2);
+}
+
+.tt-controls__presets:empty {
+  display: none;
+}
+
+.tt-controls__select,
+.tt-controls__link {
+  width: 100%;
+  min-height: 32px;
+  padding: 0 var(--tt-space-2);
+  border: 1px solid var(--tt-border);
+  border-radius: var(--tt-radius-m);
+  background: var(--tt-surface);
+  color: var(--tt-text);
+  font: inherit;
+  font-size: var(--tt-text-s);
+}
+
+.tt-controls__link {
+  text-overflow: ellipsis;
+}
+
+.tt-controls__status {
+  min-height: 1.5em;
+  font-size: var(--tt-text-s);
+}
+
+.tt-controls__status:empty {
+  display: none;
+}
+
+/* Tweakpane, mapped onto the site tokens. Its variables inherit, so setting them on the host
+   themes it in both colour schemes (the tokens resolve per scheme). */
+.tt-controls__pane {
+  --tp-base-background-color: var(--tt-surface);
+  --tp-base-border-radius: var(--tt-radius-l);
+  --tp-base-font-family: var(--tt-font-sans);
+  --tp-base-shadow-color: transparent;
+  --tp-blade-border-radius: var(--tt-radius-s);
+  --tp-blade-horizontal-padding: var(--tt-space-2);
+  --tp-blade-value-width: 62%;
+  --tp-container-horizontal-padding: var(--tt-space-3);
+  --tp-container-vertical-padding: var(--tt-space-2);
+  --tp-container-unit-spacing: var(--tt-space-1);
+  --tp-container-unit-size: 32px;
+  --tp-container-background-color: var(--tt-surface-2);
+  --tp-container-background-color-hover: var(--tt-surface-2);
+  --tp-container-background-color-focus: var(--tt-surface-2);
+  --tp-container-background-color-active: var(--tt-surface-2);
+  --tp-container-foreground-color: var(--tt-text);
+  --tp-label-foreground-color: var(--tt-text-muted);
+  --tp-input-background-color: var(--tt-surface-2);
+  --tp-input-background-color-hover: var(--tt-border);
+  --tp-input-background-color-focus: var(--tt-border);
+  --tp-input-background-color-active: var(--tt-border);
+  --tp-input-foreground-color: var(--tt-text);
+  /* Slider handles use the button colours. */
+  --tp-button-background-color: var(--tt-accent);
+  --tp-button-background-color-hover: var(--tt-accent);
+  --tp-button-background-color-focus: var(--tt-accent);
+  --tp-button-background-color-active: var(--tt-accent);
+  --tp-button-foreground-color: var(--tt-on-accent);
+  --tp-groove-foreground-color: var(--tt-border);
+  --tp-monitor-background-color: var(--tt-surface-2);
+  --tp-monitor-foreground-color: var(--tt-text-muted);
+}
+
+.tt-controls__pane .tp-rotv {
+  width: 100%;
+  border: 1px solid var(--tt-border);
+  box-shadow: none;
+  font-size: var(--tt-text-s);
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.tt-controls__pane .tp-lblv_l {
+  padding-right: var(--tt-space-2);
+}
+
+.tt-controls__pane .tp-txtv_i,
+.tt-controls__pane .tp-sldtxtv_t,
+.tt-controls__pane .tp-lstv_s {
+  font-size: var(--tt-text-s);
+}
+
+.tt-controls__pane .tp-txtv_i,
+.tt-controls__pane .tp-lstv_s {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Tweakpane removes outlines and signals focus by background alone. */
+.tt-controls__pane .tp-rotv :focus-visible {
+  outline: 2px solid var(--tt-focus);
+  outline-offset: 1px;
+}
+
+.tt-controls__pane .tp-popv {
+  border: 1px solid var(--tt-border);
+  box-shadow: none;
+}
+
+.tt-controls__pane .tp-rotv_c > .tp-cntv {
+  padding-block: var(--tt-space-2);
+}

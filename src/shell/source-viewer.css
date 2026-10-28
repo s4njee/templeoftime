@@ -1,0 +1,107 @@
+.tt-source {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tt-space-3);
+  min-width: 0;
+}
+
+.tt-source__bar,
+.tt-source__group,
+.tt-source__caption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--tt-space-2);
+}
+
+.tt-source__related {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tt-space-2);
+}
+
+.tt-source__related[hidden] {
+  display: none;
+}
+
+.tt-source__bar {
+  justify-content: space-between;
+  gap: var(--tt-space-3);
+}
+
+.tt-source__caption {
+  justify-content: space-between;
+  min-height: 20px;
+}
+
+.tt-source__caption > p {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.tt-source__status {
+  color: var(--tt-text-muted);
+  font-size: var(--tt-text-xs);
+}
+
+.tt-source__status[data-state='error'] {
+  color: var(--tt-tier-c);
+}
+
+.tt-source__button {
+  /* Rows of file names stay compact on narrow screens. */
+  min-height: 28px;
+  padding: 0 var(--tt-space-3);
+}
+
+/* Code block: shared by the source viewer and fenced blocks in the notes. */
+pre.tt-source__code {
+  margin: 0;
+  padding: var(--tt-space-3) 0;
+  overflow-x: auto;
+  border: 1px solid var(--tt-border);
+  border-radius: var(--tt-radius-m);
+  background: var(--tt-surface);
+  color: var(--tt-text);
+  font-family: var(--tt-font-mono);
+  font-size: var(--tt-text-s);
+  line-height: 1.6;
+  tab-size: 2;
+  counter-reset: tt-line;
+}
+
+pre.tt-source__code code {
+  display: block;
+  width: max-content;
+  min-width: 100%;
+  padding: 0;
+  background: none;
+  font: inherit;
+}
+
+.tt-source__line {
+  display: block;
+  padding-right: var(--tt-space-4);
+  white-space: pre;
+  counter-increment: tt-line;
+}
+
+/* The gutter stays put while long lines scroll underneath it. */
+.tt-source__line::before {
+  content: counter(tt-line);
+  display: inline-block;
+  position: sticky;
+  left: 0;
+  min-width: calc(var(--tt-source-digits, 3) * 1ch + var(--tt-space-3) + var(--tt-space-2));
+  margin-right: var(--tt-space-3);
+  padding-left: var(--tt-space-3);
+  padding-right: var(--tt-space-2);
+  background: var(--tt-surface);
+  color: var(--tt-text-muted);
+  text-align: right;
+  user-select: none;
+}
+
+.tt-source__line > span {
+  color: light-dark(var(--shiki-light), var(--shiki-dark));
+}
